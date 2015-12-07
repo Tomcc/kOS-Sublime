@@ -56,7 +56,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i:(set|log|rename))\s+[\w]+\s+((?i:to))</string>
+			<string>(?i:(set|log|rename|lock|local|global))\s+[\w]+\s+((?i:to|is))</string>
 			<key>name</key>
 			<string>text.source.kos</string>
 		</dict>
@@ -157,19 +157,19 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:add|remove|break|declare( parameter)?|set|parameter|local|global|is|remove|run|once|toggle|unlock|warp|reboot|shutdown|list|reboot)\b</string>
+			<string>\b(?i:add|remove|break|declare( parameter)?|parameter|remove|run|once|from|when|list)\b</string>
 			<key>name</key>
 			<string>keyword.source.kos</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:until|if|wait|in|for|return)\b</string>
+			<string>\b(?i:until|if|wait|in|for|return|else)\b</string>
 			<key>name</key>
 			<string>keyword.control.kos</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:and|or)\b</string>
+			<string>\b(?i:and|or|\.)\b</string>
 			<key>name</key>
 			<string>keyword.operator.kos</string>
 		</dict>
@@ -179,9 +179,15 @@
 			<key>name</key>
 			<string>support.function.source.kos</string>
 		</dict>
+			<dict>
+			<key>match</key>
+			<string>\b(?i:[\d]+)\b</string>
+			<key>name</key>
+			<string>constant.numeric.float.kos</string>
+		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:abs|mod|min|max|floor|ceiling|round|round|sqrt|sin|cos|tan|arcsin|arccos|arctan|arctan2|function|rename|log|clearscreen|delete|print|stage|edit|switch to)\b</string>
+			<string>\b(?i:abs|mod|min|max|floor|ceiling|round|round|sqrt|sin|cos|tan|arcsin|arccos|arctan|arctan2|function|rename|log|clearscreen|delete|print|stage|edit|switch to|toggle|unlock|warp|reboot|shutdown)\b</string>
 			<key>name</key>
 			<string>support.function.source.kos</string>
 		</dict>
