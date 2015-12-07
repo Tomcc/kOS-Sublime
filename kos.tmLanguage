@@ -56,9 +56,28 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i:(set|log|rename|lock|local|global))\s+[\w]+\s+((?i:to|is))</string>
+			<string>(?i:(set|rename|lock|local|global))\s+[\w:\s]+\s+((?i:to|is))</string>
 			<key>name</key>
 			<string>text.source.kos</string>
+		</dict>
+			<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.kos</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.kos</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:(log)).+((?i:to))</string>
+			<key>name</key>
+			<string>source.kos</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -157,19 +176,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:add|remove|break|declare( parameter)?|parameter|remove|run|once|from|when|list)\b</string>
+			<string>\b(?i:add|remove|break|declare( parameter)?|parameter|remove|run|run once|from|when|list|lazyglobal)\b</string>
 			<key>name</key>
 			<string>keyword.source.kos</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:until|if|wait|in|for|return|else)\b</string>
+			<string>\b(?i:until|if|wait|in|for|return|else|do)\b</string>
 			<key>name</key>
 			<string>keyword.control.kos</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:and|or|\.)\b</string>
+			<string>\b(?i:and|or|\.|\+|\-|\*)\b</string>
+			<key>name</key>
+			<string>keyword.operator.kos</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i:\.|\+|\-|\*|=|\>)</string>
 			<key>name</key>
 			<string>keyword.operator.kos</string>
 		</dict>
@@ -187,7 +212,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:abs|mod|min|max|floor|ceiling|round|round|sqrt|sin|cos|tan|arcsin|arccos|arctan|arctan2|function|rename|log|clearscreen|delete|print|stage|edit|switch to|toggle|unlock|warp|reboot|shutdown)\b</string>
+			<string>\b(?i:abs|mod|min|max|floor|ceiling|round|round|sqrt|sin|cos|tan|arcsin|arccos|arctan|arctan2|function|rename|clearscreen|delete|print|stage|edit|switch to|toggle|unlock|warp|reboot|shutdown)\b</string>
 			<key>name</key>
 			<string>support.function.source.kos</string>
 		</dict>
